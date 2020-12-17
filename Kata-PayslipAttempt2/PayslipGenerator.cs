@@ -24,11 +24,9 @@ namespace Kata_PayslipAttempt2
 
         public SalaryDetails StartGettingSalaryInfo()
         {
-            var annualSalary = _iio.AskQuestion("What is your annual salary?");
-            var annualSalaryInt = int.Parse(annualSalary);
-            var super = _iio.AskQuestion("What is your super?");
-            var superInt = int.Parse(super);
-            return new SalaryDetails(annualSalaryInt, superInt);
+            var annualSalary = _iio.AskSalary("What is your annual salary?");
+            var super = _iio.AskSuper("What is your super?");
+            return new SalaryDetails(annualSalary, super);
         }
 
 

@@ -11,8 +11,8 @@ namespace Kata_PayslipAttempt2.Tests
             //var mockInput = new MockInput("John", "Doe", 60050, 9, "1 March", "31 March");
             
             //var payslipGenerator = new PayslipGenerator(new NullInputOutput());
-            var mock = new MockInput(60050, 9);
-            var payslipGenerator = new PayslipGenerator(mock);
+            var mockSalaryDetails = new MockInput(60050, 9);
+            var payslipGenerator = new PayslipGenerator(mockSalaryDetails);
             var salaryDetails = payslipGenerator.StartGettingSalaryInfo();
             var payslipCalculator = new PayslipCalculator(salaryDetails);
 
@@ -23,7 +23,7 @@ namespace Kata_PayslipAttempt2.Tests
             //assert amount is xx when call payslip.GrossIncome property
             
             Assert.Equal(5004, payslipCalculator.GetGrossIncome());
-            // Assert.Equal(922, payslipCalculator.GetIncomeTax);
+            Assert.Equal(922, payslipCalculator.GetIncomeTax());
             // Assert.Equal(4082, salaryInfo.GetNetIncome);
             // Assert.Equal(450, salaryInfo.Super);
 

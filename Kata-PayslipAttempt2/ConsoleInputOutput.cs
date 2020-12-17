@@ -6,5 +6,15 @@ namespace Kata_PayslipAttempt2
         {
             throw new System.NotImplementedException();
         }
+
+        public int AskSalary(string question)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public int AskSuper(string question)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

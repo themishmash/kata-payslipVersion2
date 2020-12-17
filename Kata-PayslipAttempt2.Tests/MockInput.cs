@@ -9,6 +9,7 @@ namespace Kata_PayslipAttempt2.Tests
         public int Super { get; }
         public string StartDate { get; }
         public string EndDate { get; }
+        
 
         public MockInput(string name, string surname, int salary, int super, string startDate, string endDate)
         {
@@ -30,6 +31,16 @@ namespace Kata_PayslipAttempt2.Tests
         public string AskQuestion(string question)
         {
             return "";
+        }
+
+        public int AskSalary(string question)
+        {
+            return AnnualSalary;
+        }
+
+        public int AskSuper(string question)
+        {
+            return Super;
         }
     }
 }
