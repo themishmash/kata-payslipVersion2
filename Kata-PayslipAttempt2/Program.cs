@@ -6,7 +6,11 @@ namespace Kata_PayslipAttempt2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var consoleInputOutput = new ConsoleInputOutput();
+            var payslipGenerator = new PayslipGenerator(consoleInputOutput);
+            payslipGenerator.StartGettingSalaryInfo();
+
         }
+        
     }
 }

@@ -1,10 +1,10 @@
 using System;
+using System.ComponentModel;
 
 namespace Kata_PayslipAttempt2
 {
     public class PayslipGenerator
     {
-       // public PayslipCalculator PayslipCalculator { get; }
         private readonly IInputOutput _iio;
         public PayslipGenerator(IInputOutput iio)
         {
@@ -12,23 +12,44 @@ namespace Kata_PayslipAttempt2
             _iio = iio;
         }
 
-
-        // public Payslip StartGettingSalaryInfo(int annualSalaryInt, int superInt)
+        // public SalaryDetails StartGettingSalaryInfo()
         // {
-        //     // var annualSalary = _iio.AskQuestion("What is your annual salary?");
-        //     // var annualSalaryInt = int.Parse(annualSalary);
-        //     // var super = _iio.AskQuestion("What is your super?");
-        //     // var superInt = int.Parse(super);
-        //     return new Payslip(annualSalaryInt, superInt);
+        //     // var name = _iio.AskQuestion("Please input your name: ");
+        //     // var surname = _iio.AskQuestion("Please input your surname: ");
+        //     var annualSalary = _iio.AskSalary("Please enter your salary: ");
+        //     var super = _iio.AskSuper("Please enter your super rate: ");
+        //     // var startDate = _iio.AskQuestion("Please enter your start date in format eg 1 March: ");
+        //     // var endDate = _iio.AskQuestion("Please enter your end date in format eg 31 March: ");
+        //     return new SalaryDetails(annualSalary, super);
+        //    // var payslipCalculator = new PayslipCalculator(salaryDetails);
+        //    // var employeeDetails = new EmployeeDetails(name, surname);
+        //     //var timeConverter = new TimeConverter(startDate, endDate);
+        //    // PrintDetails(employeeDetails, timeConverter, payslipCalculator);
         // }
-
-        public SalaryDetails StartGettingSalaryInfo()
+        
+        public void StartGettingSalaryInfo()
         {
-            var annualSalary = _iio.AskSalary("What is your annual salary?");
-            var super = _iio.AskSuper("What is your super?");
-            return new SalaryDetails(annualSalary, super);
+            var name = _iio.AskQuestion("Please input your name: ");
+            var surname = _iio.AskQuestion("Please input your surname: ");
+            var annualSalary = _iio.AskSalary("Please enter your salary: ");
+            var super = _iio.AskSuper("Please enter your super rate: ");
+            var startDate = _iio.AskQuestion("Please enter your start date in format eg 1 March: ");
+            var endDate = _iio.AskQuestion("Please enter your end date in format eg 31 March: ");
+            var salaryDetails = new SalaryDetails(annualSalary, super);
+            var payslipCalculator = new PayslipCalculator(salaryDetails);
+            PrintDetails(name, surname, startDate, endDate, payslipCalculator);
         }
 
+        private void PrintDetails(string name, string surname, string startDate, string endDate, PayslipCalculator payslipCalculator)
+        {
+            _iio.Output("Your payslip has been generated:");
+            _iio.Output($"{name} {surname}");
+            _iio.Output($"Pay Period {startDate} - {endDate}");
+            _iio.Output($"Gross Income: {payslipCalculator.GetGrossIncome()}");
+            _iio.Output($"Income Tax: {payslipCalculator.GetIncomeTax()}");
+            _iio.Output($"Net Income: {payslipCalculator.GetNetIncome()}");
+            _iio.Output($"Super: {payslipCalculator.GetSuper()}");
+        }
 
         
     }

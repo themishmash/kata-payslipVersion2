@@ -4,21 +4,21 @@ namespace Kata_PayslipAttempt2
 {
     public class PayslipCalculator
     {
-        private SalaryDetails _salaryDetails { get; }
+        private SalaryDetails SalaryDetails { get; }
 
         public PayslipCalculator(SalaryDetails salaryDetails)
         {
-            _salaryDetails = salaryDetails;
+            SalaryDetails = salaryDetails;
         }
         public int GetGrossIncome()
         {
-            return _salaryDetails.AnnualSalary / 12;
+            return SalaryDetails.AnnualSalary / 12;
         }
 
         public int GetIncomeTax()
         {
-            var tax = TaxBracket.GetTaxForAnnualSalary(_salaryDetails.AnnualSalary);
-            return (int) Math.Ceiling((_salaryDetails.AnnualSalary - tax.LowerTaxableIncome) * tax.TaxRate +
+            var tax = TaxBracket.GetTaxForAnnualSalary(SalaryDetails.AnnualSalary);
+            return (int) Math.Ceiling((SalaryDetails.AnnualSalary - tax.LowerTaxableIncome) * tax.TaxRate +
                    tax.TaxOnIncome) / 12;
         }
 
@@ -29,7 +29,7 @@ namespace Kata_PayslipAttempt2
 
         public int GetSuper()
         {
-            double superDecimal = _salaryDetails.Super / 100;
+            var superDecimal = SalaryDetails.Super / 100;
             return (int) (GetGrossIncome() * superDecimal);
         }
     }
