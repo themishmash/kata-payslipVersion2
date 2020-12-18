@@ -11,16 +11,16 @@ namespace Kata_PayslipAttempt2.Tests
         public string EndDate { get; }
         
 
-        public MockInput(string name, string surname, int salary, int super, string startDate, string endDate)
-        {
-            Name = name;
-            Surname = surname;
-            Salary = salary;
-            Super = super;
-            StartDate = startDate;
-            EndDate = endDate;
-            
-        }
+        // public MockInput(string name, string surname, int salary, int super, string startDate, string endDate)
+        // {
+        //     Name = name;
+        //     Surname = surname;
+        //     Salary = salary;
+        //     Super = super;
+        //     StartDate = startDate;
+        //     EndDate = endDate;
+        //     
+        // }
 
         public MockInput(int annualSalary, int super)
         {

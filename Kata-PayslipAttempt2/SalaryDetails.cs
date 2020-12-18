@@ -6,7 +6,7 @@ namespace Kata_PayslipAttempt2
         public int GrossIncome { get; set; }
         public int IncomeTax { get; set; }
         public int NetIncome { get; set; }
-        public double Super { get; set; }
+        public double Super { get; }
         
 
         public SalaryDetails(int annualSalary, int super)
