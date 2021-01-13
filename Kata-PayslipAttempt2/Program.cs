@@ -8,9 +8,9 @@ namespace Kata_PayslipAttempt2
         {
             var consoleInputOutput = new ConsoleInputOutput();
             var payslipGenerator = new PayslipGenerator(consoleInputOutput);
-            payslipGenerator.StartGettingSalaryInfo();
+            var paySlipInfo = payslipGenerator.StartGettingSalaryInfo();
+            payslipGenerator.PrintDetails(paySlipInfo);
 
         }
-        
     }
 }

@@ -2,7 +2,13 @@ namespace Kata_PayslipAttempt2
 {
     public interface IInputOutput
     {
-        string AskQuestion(string question);
+        string AskName(string question);
+        
+        string AskSurname(string question);
+        
+        string AskStartDate(string question);
+        
+        string AskEndDate(string question);
 
         int AskSalary(string question);
 

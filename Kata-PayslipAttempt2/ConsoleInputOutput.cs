@@ -10,6 +10,30 @@ namespace Kata_PayslipAttempt2
             return Console.ReadLine();
         }
 
+        public string AskName(string question)
+        {
+            Console.WriteLine(question);
+            return Console.ReadLine();
+        }
+
+        public string AskSurname(string question)
+        {
+            Console.WriteLine(question);
+            return Console.ReadLine();
+        }
+
+        public string AskStartDate(string question)
+        {
+            Console.WriteLine(question);
+            return Console.ReadLine();
+        }
+
+        public string AskEndDate(string question)
+        {
+            Console.WriteLine(question);
+            return Console.ReadLine();
+        }
+
         public int AskSalary(string question)
         {
             Console.WriteLine(question);
